@@ -60,7 +60,7 @@ const renderContent = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-amber-50"> 
+    <div className="flex min-h-screen "> 
       <Drawer onSelect={handleSelectContent} />
 
      
