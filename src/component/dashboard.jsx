@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Drawer from "./drawer"; 
 import ExploreContent from './explore';
-import WorldMap from "./map";
+// import WorldMap from "./map";
+import Map from './map.jsx';
 
 const Dashboard = () => {
   
@@ -42,7 +43,7 @@ const renderContent = () => {
         return <ExploreContent />;
       // Add cases for other content types as you develop them
       case 'map':
-        return <WorldMap/>;
+        return <Map/>
       // case 'bucketList':
       //   return <BucketListContent />;
       // case 'profile':
