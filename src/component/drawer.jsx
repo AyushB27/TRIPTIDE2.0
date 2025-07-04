@@ -30,7 +30,7 @@ const Drawer = ({ onSelect }) => {
             Profile
           </DrawerButton>
           <DrawerButton onSelect={onSelect} page="rewards" icon={Award}>
-            Rewards
+            My Journey
           </DrawerButton>
         </div>
 
