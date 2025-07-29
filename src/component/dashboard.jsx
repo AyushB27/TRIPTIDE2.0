@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Drawer from "./drawer"; 
 import ExploreContent from './explore';
-// import WorldMap from "./map";
+import Profile from "./profile.jsx";
 import Map from './map.jsx';
+import LocnDetails from "./details.jsx";
 
 const Dashboard = () => {
   
@@ -46,8 +47,8 @@ const renderContent = () => {
         return <Map/>
       // case 'bucketList':
       //   return <BucketListContent />;
-      // case 'profile':
-      //   return <ProfileContent />;
+      case 'profile':
+        return <Profile/>;
       // case 'rewards':
       //   return <RewardsContent />;
       default:

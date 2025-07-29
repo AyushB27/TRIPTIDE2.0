@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Search,Heart } from 'lucide-react';
+import { Navigate, useNavigate } from "react-router-dom";
 
 const ExploreContent = ({ initialDestinationName = '' }) => {
     const [searchText, setSearchText] = useState(initialDestinationName);
     const [filteredLocations, setFilteredLocations] = useState([]);
+    const navigate = useNavigate();
 
     const locn = [
         { name: "Mumbai", country: "India", img: "https://saibabatravels.com/wp-content/uploads/2019/07/mumbai-gateway-of-india-150051333747-orijgp.jpg", description: "The bustling financial capital and 'City of Dreams', home to the iconic Gateway of India." },
@@ -29,6 +31,10 @@ const ExploreContent = ({ initialDestinationName = '' }) => {
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
     };
+    // const toDetails=(loc)=>
+    // {
+    //     navigate(`/details/${loc.toLowerCase()}`);
+    // }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-6 md:p-10 lg:p-12 rounded-4xl">
@@ -70,7 +76,10 @@ const ExploreContent = ({ initialDestinationName = '' }) => {
                                     {destination.description}
                                 </p>
                                 <div className="flex items-center justify-between mt-4">
-                                    <button className="px-5 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md">
+                                    <button className="px-5 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-md"
+                                            key = {index}
+                                            onClick={() => navigate(`/details/${destination.name.replace(/\s+/g, "").toLowerCase()}`)}
+                                    >
                                         View Details
                                     </button>
                                     
